@@ -14,7 +14,7 @@ public class Foe extends AnimatedThing{
     public void update(Hero hero){
         this.setY(300-hero.getY()+55*mode);
         if (mode==1){
-            getImageView().setImage(new Image("C:\\Users\\ARS\\Documents\\2A\\INFO\\Java\\RunnerOldARS\\src\\img\\cactusroto.png"));
+            getImageView().setImage(new Image("/ARSart/cactusroto.png"));
             getImageView().setFitHeight(55);
         }
     }
@@ -24,7 +24,7 @@ public class Foe extends AnimatedThing{
         Random rand = new Random();
         if (generatefoes) {
             this.setX((3+rand.nextInt(12 ))*200);
-            getImageView().setImage(new Image("C:\\Users\\ARS\\Documents\\2A\\INFO\\Java\\RunnerOldARS\\src\\img\\cactus.png"));
+            getImageView().setImage(new Image("/ARSart/cactus.png"));
             getImageView().setFitHeight(110);
             mode=0;
         }

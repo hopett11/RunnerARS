@@ -11,14 +11,17 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.text.DecimalFormat;
+
 public class RunnerPauseScene extends SubScene {
 
-    final String BACKGROUND_IMAGE = "/resources/fondo.png";
-    private final String FONT_PATH = "/resources/alagard.ttf";
+    final String BACKGROUND_IMAGE = "/ARSart/fondo.png";
+    private final String FONT_PATH = "/ARSart/alagard.ttf";
 
     private boolean isHidden;
     private double score = 0;
     private boolean goMenu=false;
+    private String str;
 
 
     public RunnerPauseScene() {
@@ -38,7 +41,6 @@ public class RunnerPauseScene extends SubScene {
         setLayoutY(300);
 
         getPane().getChildren().add(createButtonToMenu());
-        createPointsText();
 
         Label myText = new Label("GAME OVER");
         myText.setFont(Font.loadFont(getClass().getResourceAsStream(FONT_PATH), 50));
@@ -76,7 +78,8 @@ public class RunnerPauseScene extends SubScene {
     }
 
     public void createPointsText() {
-        Label pointsText = new Label("SCORE: " + score);
+        str = new DecimalFormat("#.0#").format(score);
+        Label pointsText = new Label("SCORE: " + str);
         pointsText.setFont(Font.loadFont(getClass().getResourceAsStream(FONT_PATH), 20));
         pointsText.setStyle("-fx-text-fill: white;");
         pointsText.setLayoutX(20);
@@ -105,7 +108,7 @@ public class RunnerPauseScene extends SubScene {
             isHidden = true;
         }
 
-
+        createPointsText();
         transition.play();
     }
 

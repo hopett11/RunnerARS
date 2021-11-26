@@ -5,10 +5,10 @@ import javafx.scene.text.Font;
 
 public class RunnerButton extends Button {
 
-    final String FONT_PATH = "/resources/alagard.ttf";
-    final String BUTTON_PRESSED_STYLE = "-fx-background-color: transparent; -fx-text-fill: white; -fx-background-image: url('/resources/buttonStock1dv4.png');";
-    final String BUTTON_FREE_STYLE = "-fx-background-color: transparent; -fx-text-fill: white; -fx-background-image: url('/resources/buttonStock1v4.png');";
-    final String BUTTON_ENTERED_STYLE = "-fx-background-color: transparent; -fx-text-fill: white; -fx-background-image: url('/resources/buttonStock1hv4.png');";
+    final String FONT_PATH = "/ARSart/alagard.ttf";
+    final String BUTTON_PRESSED_STYLE = "-fx-background-color: transparent; -fx-text-fill: white; -fx-background-image: url('/ARSart/buttonStock1dv4.png');";
+    final String BUTTON_FREE_STYLE = "-fx-background-color: transparent; -fx-text-fill: white; -fx-background-image: url('/ARSart/buttonStock1v4.png');";
+    final String BUTTON_ENTERED_STYLE = "-fx-background-color: transparent; -fx-text-fill: white; -fx-background-image: url('/ARSart/buttonStock1hv4.png');";
 
     public RunnerButton(String text) {
         setText(text);

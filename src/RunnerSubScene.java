@@ -10,7 +10,7 @@ import javafx.util.Duration;
 
 public class RunnerSubScene extends SubScene{
 
-    final String BACKGROUND_IMAGE = "/resources/fondo.png";
+    final String BACKGROUND_IMAGE = "/ARSart/fondo.png";
 
     private  boolean isHidden;
 

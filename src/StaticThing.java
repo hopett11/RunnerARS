@@ -7,7 +7,7 @@ public class StaticThing {
     protected ImageView sprite;
 
     public StaticThing(String fileName) {
-        Image spriteSheet = new Image("C:\\Users\\ARS\\Documents\\2A\\INFO\\Java\\RunnerOldARS\\src\\img\\"+fileName);
+        Image spriteSheet = new Image("/ARSart/"+fileName);
         this.sprite = new ImageView(spriteSheet);
 
 

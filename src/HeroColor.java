@@ -4,7 +4,7 @@ public class HeroColor {
 
     public HeroColor(String mycolour){
         this.colour=mycolour;
-        this.img="C:\\Users\\ARS\\Documents\\2A\\INFO\\Java\\RunnerOldARS\\src\\img\\"+mycolour+".png";
+        this.img="/ARSart/"+mycolour+".png";
     }
 
     public String getImg(){

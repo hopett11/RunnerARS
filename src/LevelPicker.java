@@ -8,8 +8,8 @@ public class LevelPicker extends VBox {
     final ImageView circleImage;
     final ImageView heroImage;
 
-    final String circleNotChoosen = "C:\\Users\\ARS\\Documents\\2A\\INFO\\Java\\RunnerOldARS\\src\\img\\grey_circle.png";
-    final String circleChoosen = "C:\\Users\\ARS\\Documents\\2A\\INFO\\Java\\RunnerOldARS\\src\\img\\red_choosen.png";
+    final String circleNotChoosen = "/ARSart/grey_circle.png";
+    final String circleChoosen = "/ARSart/red_choosen.png";
 
     final String mapString;
 
@@ -18,7 +18,7 @@ public class LevelPicker extends VBox {
 
     public LevelPicker(String mapstring) {
         circleImage = new ImageView(circleNotChoosen);
-        heroImage = new ImageView("img/logo"+mapstring);
+        heroImage = new ImageView("ARSart/logo"+mapstring);
         //heroImage.setViewport(new Rectangle2D(0,200,250,130));
         isCircleChoosen = false;
         this.mapString=mapstring;

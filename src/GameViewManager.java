@@ -66,8 +66,8 @@ public class GameViewManager {
             }
             if (event.getCode() == KeyCode.ESCAPE) {
                 gamepaused=true;
-                pauseSubscene.moveSubScene();
                 pauseSubscene.updateScore(myCamera.getX());
+                pauseSubscene.moveSubScene();
             }
         });
 
@@ -164,7 +164,6 @@ public class GameViewManager {
             newbullet.getImageView().setX(-200);
         }
         newbullet.setY(330-myhero.getY());
-        //if (x)
     }
 
     private void checkGenerateFoes(){
@@ -210,9 +209,8 @@ public class GameViewManager {
             }
         if(lifesleft==0){
             gamepaused=true;
-            pauseSubscene.moveSubScene();
             pauseSubscene.updateScore(myCamera.getX());
-
+            pauseSubscene.moveSubScene();
         }
         }
 

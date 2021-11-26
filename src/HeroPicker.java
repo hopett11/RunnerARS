@@ -9,8 +9,8 @@ public class HeroPicker extends VBox {
     final ImageView circleImage;
     final ImageView heroImage;
 
-    final String circleNotChoosen = "C:\\Users\\ARS\\Documents\\2A\\INFO\\Java\\RunnerOldARS\\src\\img\\grey_circle.png";
-    final String circleChoosen = "C:\\Users\\ARS\\Documents\\2A\\INFO\\Java\\RunnerOldARS\\src\\img\\red_choosen.png";
+    final String circleNotChoosen = "/ARSart/grey_circle.png";
+    final String circleChoosen = "/ARSart/red_choosen.png";
 
     final HeroColor herocolor;
 

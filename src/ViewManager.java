@@ -28,7 +28,7 @@ public class ViewManager {
     private ArrayList<LevelPicker> MapPickerList;
     final ArrayList<HeroColor> Colorlist;
     final ArrayList<String> Maplist;
-    private final String FONT_PATH = "/resources/alagard.ttf";
+    private final String FONT_PATH = "/ARSart/alagard.ttf";
 
     private HeroColor choosenHero;
     private String choosenLevel = "desert.png";
@@ -62,7 +62,7 @@ public class ViewManager {
     }
 
     private void createLogo() {
-        ImageView logo = new ImageView("/resources/logov3.png");
+        ImageView logo = new ImageView("/ARSart/logov3.png");
         logo.setLayoutX(0);
         logo.setLayoutY(-20);
 
@@ -75,7 +75,7 @@ public class ViewManager {
     }
 
     private void createBackground() {
-        Image backgroundImage = new Image("C:\\Users\\ARS\\Documents\\2A\\INFO\\Java\\RunnerOldARS\\src\\img\\fondov2.jpg", 1200, 600, false, false);
+        Image backgroundImage = new Image("/ARSart/fondov2.jpg", 1200, 600, false, false);
         BackgroundImage background = new BackgroundImage(backgroundImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, null);
         mainPane.setBackground(new Background(background));
     }
@@ -253,7 +253,7 @@ public class ViewManager {
         creditsSubscene = new RunnerSubScene();
         mainPane.getChildren().add(creditsSubscene);
         String newLine = System.getProperty("line.separator");
-        ImageView ENSEAlogo = new ImageView("/img/Logo_ENSEAv4.png");
+        ImageView ENSEAlogo = new ImageView("/ARSart/Logo_ENSEAv4.png");
         ENSEAlogo.setLayoutX(460);
         ENSEAlogo.setLayoutY(80);
         Label creditsText = new Label("Game Design: Alvaro RODRIGUEZ SANCHEZ"+newLine+newLine+"Company: Project as a ENSEA student"+newLine+newLine+"Graphics: Taken from opengameart.org (Copyright Free)");
