@@ -18,6 +18,7 @@ public class RunnerPauseScene extends SubScene {
 
     private boolean isHidden;
     private double score = 0;
+    private boolean goMenu=false;
 
 
     public RunnerPauseScene() {
@@ -55,10 +56,7 @@ public class RunnerPauseScene extends SubScene {
         startButton.setLayoutY(70);
 
 
-        startButton.setOnAction(event -> {
-
-
-        });
+        startButton.setOnAction(event -> goMenu=true);
 
         return startButton;
     }
@@ -113,5 +111,9 @@ public class RunnerPauseScene extends SubScene {
 
     public AnchorPane getPane() {
         return (AnchorPane) this.getRoot();
+    }
+
+    public boolean getGoMenu(){
+        return goMenu;
     }
 }

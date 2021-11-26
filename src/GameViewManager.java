@@ -1,10 +1,8 @@
 import javafx.animation.AnimationTimer;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import java.util.ArrayList;
 
@@ -19,7 +17,6 @@ public class GameViewManager {
     private Stage gameStage;
     private Stage menuStage;
     private Hero myhero;
-    private Bullet mybullet;
     private AnimatedThing newbullet;
     private AnimationTimer gameTimer;
     private int reloadTimer=0;
@@ -61,9 +58,8 @@ public class GameViewManager {
                 myhero.isrealspacePressed = true;
 
             }
-            if ((event.getCode() == KeyCode.ENTER) && reloadTimer == 0) {
+            if ((event.getCode() == KeyCode.ENTER) && reloadTimer == 0 && myhero.getY()>=150) {
                 myhero.attitude = 3;
-                //mybullet.moveBullet();
                 shootmode=true;
                 newbullet.getImageView().setX(135);
                 reloadTimer = reload;
@@ -108,6 +104,9 @@ public class GameViewManager {
                 else {
                     myCamera.moveCamera(backgroundLeft,backgroundRight,time, myhero);
                     destroyFoes();
+                }
+                if(getGoMenu()){
+                    prepareClose();
                 }
 
                 }
@@ -210,8 +209,9 @@ public class GameViewManager {
                 myhero.setInvincibility(1000);
             }
         if(lifesleft==0){
-            gameStage.close();
-            menuStage.close();
+            gamepaused=true;
+            pauseSubscene.moveSubScene();
+            pauseSubscene.updateScore(myCamera.getX());
 
         }
         }
@@ -266,18 +266,12 @@ public class GameViewManager {
         foe4.setX(-200);
         foe4.setY(150);
 
-        mybullet = new Bullet();
 
         newbullet = new AnimatedThing("heros.png");
         newbullet.setViewXY(530, 365,30,30);
-        newbullet.getImageView().setX(-50);
+        newbullet.getImageView().setX(-200);
         newbullet.getImageView().setY(180);
         gamePane.getChildren().add(newbullet.getImageView());
-
-        gamePane.getChildren().add(mybullet.getImageView());
-        mybullet.setX(676);
-        mybullet.setY(180);
-        mybullet.setNode(gamePane);
 
 
         gameStage.show();
@@ -329,9 +323,6 @@ public class GameViewManager {
         createPauseSubscene();
     }
 
-    void PauseMenu(){
-
-    }
 
     private void createPauseSubscene() {
         pauseSubscene = new RunnerPauseScene();
@@ -340,12 +331,15 @@ public class GameViewManager {
 
     }
 
-    public void setGamepaused(boolean gamepaused) {
-        this.gamepaused = gamepaused;
+
+    public boolean getGoMenu(){
+        return pauseSubscene.getGoMenu();
     }
 
-    public boolean getGamePaused(){
-        return gamepaused;
+    public void prepareClose(){
+        menuStage.show();
+        gameStage.close();
+        gameTimer.stop();
     }
 }
 

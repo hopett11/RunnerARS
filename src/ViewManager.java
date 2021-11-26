@@ -37,6 +37,7 @@ public class ViewManager {
     private RunnerSubScene sceneToHide;
     private RunnerSubScene helpSubscene;
     private RunnerSubScene levelSubscene;
+    private GameViewManager gameManager;
 
 
     public ViewManager() {
@@ -87,7 +88,7 @@ public class ViewManager {
 
 
         startButton.setOnAction(event -> {
-                GameViewManager gameManager = new GameViewManager();
+                gameManager = new GameViewManager();
                 gameManager.createNewGame(mainStage,choosenHero.getColour(),choosenLevel);
 
         });
